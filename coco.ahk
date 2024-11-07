@@ -11,8 +11,6 @@ global accounts := getData()
 
 MsgBox, 0, Information, This code is the property of Larry2018. Redistribution, sale, or acquisition of this bot is not permitted.`nOnly the owner (Larry2018) is authorized to distribute or modify the code.`nFor source code details, please contact via Discord: larry2018.`nAll rights reserved.`n`nHotKey:`nF2 - Close Bot
 
-getId()
-
 winTitle := "BC.GAME: Crypto Casino Games & Casino Slot Games - Crypto Gambling"
 WinForeground(winTitle)
 cocos := ["0x3BAF67", "0x2226FE", "0x38D5FE", "0x44A0DB"]
