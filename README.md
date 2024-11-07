@@ -21,11 +21,9 @@ https://www.autohotkey.com/
 1. Double Click the ahk file.
 2. Enter numbers of accounts.
 3. Maximize the firefox screen
-Note: Before Running Script Dont forget to add Serial Key in Code, To get Key Type in CMD - "wmic bios get serialnumber" 
-Use firefox Temp Container Extension to login multiple accounts on each tabs, 
+Note: Use firefox Temp Container Extension to login multiple accounts on each tabs, 
 It works on 1920x1080 resolution if you need more screen resolution feel free to contact
 ```
-![Serial Key](screenshots/serialkey.png)
 ![Firefox Tabs](screenshots/firefox_tabs.png)
 
 ## Contact
