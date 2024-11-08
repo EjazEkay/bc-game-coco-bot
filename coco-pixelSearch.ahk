@@ -13,8 +13,8 @@ MsgBox, 0, Information, This code is the property of Larry2018. Redistribution, 
 
 winTitle := "BC.GAME: Crypto Casino Games & Casino Slot Games - Crypto Gambling"
 WinForeground(winTitle)
-cocos := ["0x3BAF67", "0x2226FE", "0x38D5FE", "0x44A0DB"]
-locations := [[125, 940], [1880, 825], [1800, 280], [120, 920]]
+cocos := ["0x64AC37", "0xFF2A26", "0xFE2824", "0xDBA044"]
+locations := [[80, 999, 165, 1025], [1850, 800, 1900, 850], [1780, 275, 1830, 330], [80, 999, 165, 1025]]
 global counter := 0
 global counterFlag := 0
 
@@ -35,14 +35,16 @@ Loop {
       swapNext()
       Sleep, 6000
     }
-    MsgBox, 0, Info, All Coco's Catched Successfuly!, 18000 
+    MsgBox, 0, Info, All Coco's Catched Successfuly!, 18000
   }
 
   Loop, % cocos.MaxIndex() {
     coco := cocos[A_Index]
-    x := locations[A_Index, 1]
-    y := locations[A_Index, 2]
-    checkAndClick(coco, x, y)
+    x1 := locations[A_Index, 1]
+    y1 := locations[A_Index, 2]
+    x2 := locations[A_Index, 3]
+    y2 := locations[A_Index, 4]
+    checkAndClick(coco, x1, y1, x2, y2)
   }
 
   Sleep, 250
@@ -56,16 +58,18 @@ WinForeground(winTitle) {
   }
 }
 
-checkAndClick(coco, x, y) {
-  PixelGetColor, cocoPixel, x, y
-  if (cocoPixel = coco) {
-    MouseMove, %x%, %y%, 5
+checkAndClick(coco, x1, y1, x2, y2) {
+  PixelSearch, FoundX, FoundY, x1, y1, x2, y2, coco, 0, Fast RGB
+  if !ErrorLevel {
+    MouseMove, %FoundX%, %FoundY%, 5
     Click
     Sleep, 500
     swapNext()
     If (accounts > 1) {
       counter++
       counterFlag := 0
+    } Else {
+      MsgBox, 0, Info, All Coco's Catched Successfuly!, 18000
     }
   }
 }
@@ -81,30 +85,12 @@ getData() {
     MsgBox, 0,, Value must be between 1-15, 5
     ExitApp
   }
-  Return accounts 
+  Return accounts
 }
 
 swapNext() {
   Send, ^{tab}
-  Sleep, 100 
-}
-
-getId() {
-  tempFile := A_Temp "\serial.txt"
-  RunWait, %ComSpec% /c wmic diskdrive get serialnumber /format:list > "%tempFile%", , Hide
-  FileRead, OutputVar, %tempFile%
-  FileDelete, %tempFile%
-
-  StringReplace, OutputVar, OutputVar, `r, , All ; Remove carriage returns
-  StringReplace, OutputVar, OutputVar, `n, , All ; Remove newlines
-
-  OutputVar := Trim(OutputVar)
-  allowedId := "SerialNumber=ENTER_YOUR_SERIAL_KEY_HERE"
-
-  If (OutputVar != allowedId) {
-    MsgBox, 0,, Invalid Id
-    ExitApp
-  }
+  Sleep, 100
 }
 
 F2::
