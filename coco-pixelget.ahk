@@ -13,8 +13,8 @@ MsgBox, 0, Information, This code is the property of Larry2018. Redistribution, 
 
 winTitle := "BC.GAME: Crypto Casino Games & Casino Slot Games - Crypto Gambling"
 WinForeground(winTitle)
-cocos := ["0x3BAF67", "0x2226FE", "0x38D5FE", "0x44A0DB"]
-locations := [[125, 940], [1880, 825], [1800, 280], [120, 920]]
+cocos := ["0x3BAF67", "0x2226FE", "0x38D5FE", "0x44A0DB", "0x3645C9", "0x384FFF", "0x374EFE"]
+locations := [[125, 940], [1880, 825], [1800, 280], [120, 920], [120, 907], [1870, 820], [1800, 293]]
 global counter := 0
 global counterFlag := 0
 
