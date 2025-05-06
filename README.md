@@ -9,24 +9,30 @@ Externally Automatically catches COCO on 1-20 accounts 4 times a day on single s
 
 ## Installation
 
-Download and install v1.1 AHK.
+Download and install python
 
 ```bash
-https://www.autohotkey.com/
+https://www.python.org/downloads/
 ```
 
 ## Usage
 
 ```bash
-1. Double Click the ahk file.
+1. Double Click the exe file.
 2. Enter numbers of accounts.
 3. Maximize the firefox screen
 Note: Use firefox Temp Container Extension to login multiple accounts on each tabs, 
-It works on 1920x1080 resolution if you need more screen resolution feel free to contact
+It works on 1920x1080 resolution & 125% Scale. if you need more screen resolution feel free to contact
 ```
-![Firefox Tabs](screenshots/firefox_tabs.png)
+
+```bash
+To make and use exe
+pyinstaller --onefile --add-data "cocos;cocos" --icon=coco.ico coco.py
+```
+
+![Firefox Tabs](archive/screenshots/firefox_tabs.png)
 
 ## Contact
 
-###### Discord: Larry2018 | Telegram: +447746632414 (Multiple persons uses - Mentioned talking to larry)
-###### Note: I do scripting work for free if you have any idea of making automation of anything else contact me and we decide on it.
+###### Discord: Larry2018 | Telegram: +447746632414
+###### Note: I do scripting work for fun if you have any idea of making automation of anything else contact me and we decide on it.
