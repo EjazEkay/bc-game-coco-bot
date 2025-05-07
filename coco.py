@@ -20,11 +20,12 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
+
 def get_data():
     try:
-        accounts = int(input("Enter number of accounts (1-15): "))
-        if accounts < 1 or accounts > 15:
-            print("Value must be between 1-15")
+        accounts = int(input("Enter number of accounts (1-8): "))
+        if accounts < 1 or accounts > 8:
+            print("Value must be between 1-8")
             sys.exit()
         return accounts
     except ValueError:
@@ -44,10 +45,9 @@ def find_and_click_any_coco():
         try:
             location = pyautogui.locateCenterOnScreen(image_path, confidence=0.9)
             if location:
-                print(f"The {image} Found.")
+                print(f"The COCO Found.")
                 pyautogui.moveTo(location.x, location.y, duration=0.1)
                 pyautogui.click()
-                time.sleep(0.25)
                 return True
         except pyautogui.ImageNotFoundException:
             continue
@@ -61,7 +61,7 @@ def swap_next():
 
 
 def main():
-    print("This code is the property of Larry2018. Redistribution not allowed.")
+    print("This code is the property of Larry2018. Redistribution is not allowed.")
     accounts = get_data()
     ensure_window()
 
@@ -83,7 +83,7 @@ def main():
                 swap_next()
                 time.sleep(6)
             print("All Coco's Caught Successfully!")
-            time.sleep(18)
+            time.sleep(12000)
 
         if find_and_click_any_coco():
             swap_next()
@@ -92,7 +92,7 @@ def main():
                 counter_flag = 0
             else:
                 print("All Coco's Caught Successfully!")
-                time.sleep(15000)
+                time.sleep(12000)
 
         time.sleep(1)
 
