@@ -82,6 +82,7 @@ def main():
 
             for _ in range(accounts):
                 swap_next()
+                time.sleep(0.25)
 
             time.sleep(5)
             for _ in range(accounts):
