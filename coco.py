@@ -23,9 +23,9 @@ def resource_path(relative_path):
 
 def get_data():
     try:
-        accounts = int(input("Enter number of accounts (1-8): "))
-        if accounts < 1 or accounts > 8:
-            print("Value must be between 1-8")
+        accounts = int(input("Enter number of accounts (1-10): "))
+        if accounts < 1 or accounts > 10:
+            print("Value must be between 1-10")
             sys.exit()
         return accounts
     except ValueError:
@@ -48,6 +48,7 @@ def find_and_click_any_coco():
                 print(f"The COCO Found.")
                 pyautogui.moveTo(location.x, location.y, duration=0.1)
                 pyautogui.click()
+                time.sleep(0.125)
                 return True
         except pyautogui.ImageNotFoundException:
             continue
@@ -78,10 +79,15 @@ def main():
         if counter >= accounts:
             counter = 0
             counter_flag = 0
-            time.sleep(6)
+
+            for _ in range(accounts):
+                swap_next()
+
+            time.sleep(5)
             for _ in range(accounts):
                 swap_next()
                 time.sleep(6)
+
             print("All Coco's Caught Successfully!")
             time.sleep(12000)
 
