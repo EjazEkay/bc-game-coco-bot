@@ -55,8 +55,8 @@ def get_data():
 
 
 def ensure_window():
-    input(
-        "Make sure your browser is in the foreground and visible. Press Enter to start..."
+    pyautogui.alert(
+        "Make sure your browser is in the foreground and visible. Press OK to start..."
     )
 
 
@@ -117,8 +117,8 @@ def main():
             time.sleep(12000)
 
         if find_and_click_any_coco():
-            swap_next()
             if accounts > 1:
+                swap_next()
                 counter += 1
                 counter_flag = 0
             else:
